@@ -14,3 +14,7 @@ fdisk -l | head -17  >>$FLUFFY_BUNNY.report
 
 echo -e "\n\n Mounted Filesystems: \n\n"  >>$FLUFFY_BUNNY.report
 df -hT | grep -v tmp >>$FLUFFY_BUNNY.report
+
+echo -e "\n\n RAID Configuration: \n\n"  >>$FLUFFY_BUNNY.report
+mdadm --detail /dev/md0 >>$FILENAME.report
+
